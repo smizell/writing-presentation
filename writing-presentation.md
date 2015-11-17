@@ -135,19 +135,16 @@
 # Gherkin
 
 ```gherkin
-Feature: Some terse yet descriptive text of what is desired
-  As an explicit system actor
-  I want to gain some beneficial outcome which furthers the goal
-  So that I realize a named business value
+Feature: Lockable doors for users with keys
+  As a door own
+  I want to be able restrict access through the door
+  So that I can secure my area
 
-  Scenario: Some determinable business situation
-    Given some precondition
-    And some other precondition
-    When some action by the actor
-    And some other action
-    And yet another action
-    Then some testable outcome is achieved
-    And something else we can check happens too
+  Scenario: User with key encounters locked door
+    Given I am a user with a key
+      And I encounter a locked door
+    When I try to unlock the door
+    Then The door should be unlocked
 ```
 
 ---
@@ -160,7 +157,6 @@ Feature: Some terse yet descriptive text of what is desired
 ---
 
 # Implementation
-## Notice we haven't written code yet
 
 ---
 
@@ -189,7 +185,16 @@ Feature: Some terse yet descriptive text of what is desired
 - [Readme Driven Development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html)
 - Contract First
 - Documentation lives alongside code
+- Documentation is generated from code
 - Documentation with Continuous Integration Build
+
+---
+
+# Documentation Tools
+- GitHub Pages and Jekyll
+- [Literate Programming](https://jashkenas.github.io/docco/)
+- Read the Docs
+- Sphinx
 
 ---
 
